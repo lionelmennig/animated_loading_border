@@ -25,6 +25,10 @@ class AnimatedLoadingBorder extends StatefulWidget {
   /// Default value [1]
   final double borderWidth;
 
+  /// Defines the length of the visible border in percents
+  /// Default value [0.2] (= 20%)
+  final double borderLength;
+
   /// Defines the color of the border
   /// Default value [Colors.black]
   final Color borderColor;
@@ -51,6 +55,7 @@ class AnimatedLoadingBorder extends StatefulWidget {
     this.duration = const Duration(seconds: 4),
     this.cornerRadius = 0.0,
     this.borderWidth = 1,
+    this.borderLength = 0.2,
     this.borderColor = Colors.black,
     this.trailingBorderColor = Colors.black,
     this.padding = EdgeInsets.zero,
@@ -123,6 +128,7 @@ class _AnimatedLoadingBorderState extends State<AnimatedLoadingBorder>
         animation: _controller,
         cornerRadius: widget.cornerRadius,
         borderWidth: widget.borderWidth,
+        gradientLength: widget.borderLength,
         borderColor: borderColor,
         trailingBorderColor: widget.trailingBorderColor,
         isTrailingTransparent: widget.isTrailingTransparent,
