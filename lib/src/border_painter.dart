@@ -44,6 +44,7 @@ class BorderPainter extends CustomPainter {
     final progress = animation.value;
 
     if (progress > 0.0) {
+      paint.color = borderColor;
       paint.shader = SweepGradient(
         colors: [
           trailingBorderColor,
