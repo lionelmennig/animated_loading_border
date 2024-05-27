@@ -14,6 +14,9 @@ class BorderPainter extends CustomPainter {
   /// Width of the border
   final double borderWidth;
 
+  /// Length of the gradient in percents
+  final double gradientLength;
+
   /// Color of the border
   final Color borderColor;
 
@@ -30,6 +33,7 @@ class BorderPainter extends CustomPainter {
     required this.animation,
     required this.cornerRadius,
     required this.borderWidth,
+    required this.gradientLength,
     required this.borderColor,
     required this.trailingBorderColor,
     required this.isTrailingTransparent,
@@ -58,8 +62,8 @@ class BorderPainter extends CustomPainter {
           1.0,
           1.0,
         ],
-        startAngle: math.pi / 8,
-        endAngle: math.pi / 2,
+        startAngle: 0.0,
+        endAngle: gradientLength * 360 * math.pi / 180,
         transform: GradientRotation(
           (math.pi * 2 * progress) + startingPosition,
         ),
